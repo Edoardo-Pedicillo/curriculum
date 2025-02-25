@@ -1,0 +1,309 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.1 (February 24, 2025)
+%
+% This template originates from:
+% https://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
+
+\usepackage{multibbl}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.45\textwidth} % Left column with your name and title, change the width as needed
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Edoardo}}}}} % First name
+	
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Pedicillo}}}}} % Last name
+	
+	\vspace{6pt} % Vertical whitespace
+	
+	{\huge PhD Candidate in Physics} % Career or current job title
+\end{minipage}
+\hfill % Automatic horizontal whitespace
+\begin{minipage}[t]{0.27\textwidth} % Center column with the first column of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\icon{MapMarker}{10}{University of Milan, Italy}\\
+	\icon{MapMarker}{10}{TII, Abu Dhabi}\\
+	\icon{At}{10}{\href{mailto:edoardo.pedicillo@tii.ae}{edoardo.pedicillo@tii.ae}}\\	
+\end{minipage}
+\hfill % Automatic horizontal whitespace
+\begin{minipage}[t]{0.27\textwidth} % Right column with the first column of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\icon{Github}{10}{\href{https://github.com/Edoardo-Pedicillo}{Edoardo-Pedicillo}}\\
+	\icon{Linkedin}{10}{\href{https://www.linkedin.com/in/edoardo-pedicillo-00278426a/}{edoardo-pedicillo}}\\
+	\icon{GraduationCap}{10}{\href{https://scholar.google.com/citations?user=BdR0ITEAAAAJ&hl=en}{Google Scholar}}\\
+\end{minipage}
+
+\vspace{0.5cm} % Vertical whitespace
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+
+\cvsect{Who Am I?}
+
+\begin{minipage}[t]{0.4\textwidth} % Left column with the introduction text, change the width as needed
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	I am a physicist and PhD candidate at the University of Milan, focusing on 
+    quantum computing and hardware calibration.
+    My work includes developing open-source tools like Qibocal and Qibolab 
+    to make quantum hardware calibration more accessible. Outside of research, 
+    I enjoy optimizing my computing setup with tools like Neovim and tmux, 
+    fine-tuning configurations for a better experience and a smoother workflow.
+\end{minipage}
+\hfill % Automatic horizontal whitespace
+\begin{minipage}[t]{0.5\textwidth} % Right column with the skills bar chart, change the width as needed
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\begin{barchart}{5.5} % The parameter to the barchart environment is the maximum width (in cm) of the longest bar
+		\baritem{Python}{90}
+		\baritem{C++}{60}
+		\baritem{Bash}{60}
+		\baritem{\LaTeX}{80}
+		\baritem{Git}{90}
+	\end{barchart}
+\end{minipage}
+
+% Output a series of bubbles showing your proficiency with environments and/or tools
+\begin{center}
+	\bubbles{6/Numpy, 6/Tensorflow, 4/Keras, 3/QuTiP} % Each bubble must be in the format of '<size>/<label>' and you can specify as many bubbles as will fit on the page
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Experience}
+
+\begin{entrylist}
+	\entry
+		{2023 -- present}
+		{Associate Researcher}
+		{Technology Innovation Institute}
+		{Contributing to quantum hardware calibration research and software development, 
+        including tools like Qibocal and Qibolab for quantum systems.}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{2022 -- present}
+		{PhD Candidate in Physics}
+		{University of Milan}
+		{Working on open-source quantum computing tools, focusing on superconducting
+        chip calibration and quantum system software.}
+	\entry
+		{2020 -- 2022}
+		{Master of Science in Physics}
+		{University of Milan}
+        {Advanced studies in theoretical and computational high energy physics.
+        Grade 110/110 cum laude.}
+	\entry
+		{2017 -- 2020}
+		{Bachelor of Science in Physics}
+		{University of Milan}
+		{Grade 110/110}
+\end{entrylist}
+
+\cvsect{Projects}
+\begin{entrylist}
+	\entry
+		{}
+        {\faGithub~\href{https://github.com/qiboteam/qibo}{\textbf{Qibo}}}
+		{}
+        {an open-source full stack API for quantum simulation and quantum hardware control.}
+
+    \entry
+        {}
+        {\faGithub~\href{https://github.com/qiboteam/qibocal}{\textbf{Qibocal}}}
+        {}
+        {software providing Quantum Characterization Validation and Verification protocols. }
+
+    \entry
+        {}
+        {\faGithub~\href{https://github.com/qiboteam/qibolab}{\textbf{Qibolab}}}
+        {}
+        {the dedicated Qibo backend for the automatic deployment of quantum circuits on quantum hardware. }
+
+    \entry
+        {}
+        {\faGithub~\href{https://github.com/qiboteam/boostvqe}{\textbf{Boostvqe}}}
+        {}
+        {Boosting variational eigenstate preparation algorithms by double-bracket iteration.}
+
+\end{entrylist}
+
+\cvsect{Participation in Events}
+
+\begin{entrylist}
+
+    \entry
+        {July 2023}
+        {Summer School}
+        {University of Trento, IT}
+        {Summer school on Mathematical foundations of Quantum Machine Learning.}
+        {}
+         
+    \entry
+        {November 2023}
+        {QTML}
+        {CERN, Geneva, CH}
+        {Quantum Techniques in Machine Learning.}
+        {}
+
+    \entry
+        {January 2024}
+        {QIP}
+        {Taipei, TW}
+        {Quantum Information Process.}
+        {}
+
+    \entry
+        {March 2024}
+        {March meeting}
+        {Minneapolis, MN}
+        {2024 APS March meeting.}
+        {}
+
+    \entry
+        {May 2024}
+        {ACAT24}
+        {Stony Brook, NY}
+        {22nd International Workshop on Advanced Computing and Analysis Techniques in Physics Research.}
+        {}
+
+    \entry
+        {June 2024}
+        {WQS24}
+        {Copenhagen, DK}
+        {Workshop on Quantum Software.}
+        {}
+
+    \entry
+        {January 2025}
+        {Quantum Technology Symposium.}
+        {Abu Dhabi, UAE}
+        {}
+        {}
+\end{entrylist}
+
+
+\cvsect{Publications}
+
+% \subsection{Journal Article(Accepted)}
+% \cventry{2019}{\textbf{Pratik Dutta}, Sriparna Saha, Sanket Pai and Aviral Kumar}{}{Protein-protein Interaction based Generative Model for Improving Gene Clustering}{In \textit{\textbf{Scientific Reports-Nature}} (\textbf{Impact Factor: 4.12)}}{}
+
+\subsection*{Articles}
+
+\begin{entrylist}
+    \entry
+        {2024}
+        {Double-bracket quantum algorithms for high-fidelity ground state preparation}
+        {}
+        {on \href{https://doi.org/10.48550/arXiv.2408.03987}{\textbf{arXiv}} and under review.} 
+    \entry
+        {2024}
+        {Qibocal: an open-source framework for calibration of self-hosted quantum devices.}
+        {}
+        {on \href{https://doi.org/10.48550/arXiv.2410.00101}{\textbf{arXiv}} and under review.} 
+        {}
+    \entry
+        {2024}
+        {Qibolab: an open-source hybrid quantum operating system}
+        {}
+        {on \href{https://quantum-journal.org/papers/q-2024-02-12-1247}{\textbf{Quantum Journal}}.} 
+        {}
+\end{entrylist}
+
+\subsection*{In Conference Proceedings}
+
+\begin{entrylist}
+
+    \entry
+        {2024}
+        {Strategies for optimizing double-bracket quantum algorithms}
+        {}
+        {on \href{https://arxiv.org/abs/2408.07431}{\textbf{arXiv}}.} 
+    \entry
+        {2024}
+        {An open-source framework for quantum hardware control}
+        {}
+        {on \href{https://arxiv.org/abs/2407.21737}{\textbf{arXiv}}.} 
+    \entry
+        {2024}
+        {Beyond full statevector simulation with Qibo}
+        {}
+        {on \href{https://arxiv.org/abs/2408.00384}{\textbf{arXiv}}.} 
+    \entry
+        {2023}
+        {Benchmarking machine learning models for quantum state classification}
+        {}
+        {on \href{https://arxiv.org/abs/2309.07679}{\textbf{arXiv}}.} 
+
+\end{entrylist}
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}[t]{0.3\textwidth} % Left column width
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Languages}
+	
+	\textbf{Italian} - Native\\
+	\textbf{English} - Fluent\\
+	\textbf{German} - Intermediate
+\end{minipage}
+\hfill % Automatic horizontal whitespace
+\begin{minipage}[t]{0.3\textwidth} % Center column width
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Hobbies}
+	
+	Exploring advanced tools for computing, from Neovim to tmux, and optimizing my working environment for maximum productivity.
+\end{minipage}
+\hfill % Automatic horizontal whitespace
+\begin{minipage}[t]{0.3\textwidth} % Right column width
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+	
+	\cvsect{Non profit}
+	
+	Contributing to open-source quantum computing tools and research to make quantum technologies more accessible.
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+
