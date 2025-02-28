@@ -24,6 +24,10 @@
 \documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
 
 \usepackage[backend=bibtex]{biblatex}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{tikz}
 
 \defbibheading{journals}{\textbf{Articles} }
 \defbibheading{proceedings}{\textbf{Proceedings}}
@@ -74,33 +78,44 @@
 
 \cvsect{Who Am I?}
 
-\begin{minipage}[t]{0.4\textwidth} % Left column with the introduction text, change the width as needed
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
+I am a passionate physicist and PhD candidate at the University of Milan, 
+specializing in quantum computing and hardware calibration.
+My research focuses on developing open-source tools such as Qibocal 
+and Qibolab, which aim to simplify quantum hardware calibration.
+
+Beyond my academic pursuits, I have a keen interest in optimizing computing environments.
+I enjoy experimenting with tools like Neovim and tmux to create efficient and
+personalized workflows. 
+This passion for fine-tuning systems not only enhances my productivity but also
+reflects my broader philosophy of continuous improvement and innovation.
+
+% \begin{minipage}[t]{0.4\textwidth} % Left column with the introduction text, change the width as needed
+% 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
-	I am a physicist and PhD candidate at the University of Milan, focusing on 
-    quantum computing and hardware calibration.
-    My work includes developing open-source tools like Qibocal and Qibolab 
-    to make quantum hardware calibration more accessible. Outside of research, 
-    I enjoy optimizing my computing setup with tools like Neovim and tmux, 
-    fine-tuning configurations for a better experience and a smoother workflow.
-\end{minipage}
-\hfill % Automatic horizontal whitespace
-\begin{minipage}[t]{0.5\textwidth} % Right column with the skills bar chart, change the width as needed
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
+% 	I am a physicist and PhD candidate at the University of Milan, focusing on 
+%     quantum computing and hardware calibration.
+%     My work includes developing open-source tools like Qibocal and Qibolab 
+%     to make quantum hardware calibration more accessible. Outside of research, 
+%     I enjoy optimizing my computing setup with tools like Neovim and tmux, 
+%     fine-tuning configurations for a better experience and a smoother workflow.
+% \end{minipage}
+% \hfill % Automatic horizontal whitespace
+% \begin{minipage}[t]{0.5\textwidth} % Right column with the skills bar chart, change the width as needed
+% 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
-	\begin{barchart}{5.5} % The parameter to the barchart environment is the maximum width (in cm) of the longest bar
-		\baritem{Python}{90}
-		\baritem{C++}{60}
-		\baritem{Bash}{60}
-		\baritem{\LaTeX}{80}
-		\baritem{Git}{90}
-	\end{barchart}
-\end{minipage}
+% 	\begin{barchart}{5.5} % The parameter to the barchart environment is the maximum width (in cm) of the longest bar
+% 		\baritem{Python}{90}
+% 		\baritem{C++}{60}
+% 		\baritem{Bash}{60}
+% 		\baritem{\LaTeX}{80}
+% 		\baritem{Git}{90}
+% 	\end{barchart}
+% \end{minipage}
 
 % Output a series of bubbles showing your proficiency with environments and/or tools
-\begin{center}
-	\bubbles{6/Numpy, 6/Tensorflow, 4/Keras, 3/QuTiP} % Each bubble must be in the format of '<size>/<label>' and you can specify as many bubbles as will fit on the page
-\end{center}
+% \begin{center}
+% 	\bubbles{6/Numpy, 6/Tensorflow, 4/Keras, 3/QuTiP} % Each bubble must be in the format of '<size>/<label>' and you can specify as many bubbles as will fit on the page
+% \end{center}
 
 %----------------------------------------------------------------------------------------
 %	EXPERIENCE
@@ -189,12 +204,6 @@
         {Quantum Techniques in Machine Learning.}
         {}
 
-    \entry
-        {January 2024}
-        {QIP}
-        {Taipei, TW}
-        {Quantum Information Process.}
-        {}
 
     \entry
         {March 2024}
@@ -203,25 +212,39 @@
         {2024 APS March meeting.}
         {}
 
+
+
+\end{entrylist}
+\textbf{Talks}\\
+\begin{entrylist}
     \entry
         {May 2024}
-        {ACAT24}
+        {Towards an open-source hybrid quantum operating system}
         {Stony Brook, NY}
         {22nd International Workshop on Advanced Computing and Analysis Techniques in Physics Research.}
         {}
 
     \entry
         {June 2024}
-        {WQS24}
+        {Towards an open-source framework to perform quantum calibration and characterization}
         {Copenhagen, DK}
         {Workshop on Quantum Software.}
         {}
+\end{entrylist}
 
+\textbf{Posters}\\
+\begin{entrylist}
     \entry
         {January 2025}
         {Quantum Technology Symposium.}
         {Abu Dhabi, UAE}
         {}
+        {}
+    \entry
+        {January 2024}
+        {QIP}
+        {Taipei, TW}
+        {Quantum Information Process.}
         {}
 \end{entrylist}
 
@@ -248,33 +271,35 @@
 %	ADDITIONAL INFORMATION
 %----------------------------------------------------------------------------------------
 
-\begin{minipage}[t]{0.3\textwidth} % Left column width
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-
-	\cvsect{Languages}
-	
-	\textbf{Italian} - Native\\
-	\textbf{English} - Fluent\\
-	\textbf{German} - Intermediate
-\end{minipage}
-\hfill % Automatic horizontal whitespace
-\begin{minipage}[t]{0.3\textwidth} % Center column width
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	
-	\cvsect{Hobbies}
-	
-	Exploring advanced tools for computing, from Neovim to tmux, and optimizing my working environment for maximum productivity.
-\end{minipage}
-\hfill % Automatic horizontal whitespace
-\begin{minipage}[t]{0.3\textwidth} % Right column width
-	\vspace{-\baselineskip} % Required for vertically aligning minipages
-	
-	\cvsect{Non profit}
-	
-	Contributing to open-source quantum computing tools and research to make quantum technologies more accessible.
-\end{minipage}
-
 %----------------------------------------------------------------------------------------
+\cvsect{Skills}
+%---------------------------------------------------------
+
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+\textbf{Programming Languages} & \textbf{\makecell{Framework \\ \& Libraries}} & \textbf{OS} & \textbf{Tools} \\
+Python & NumPy & Linux & git \\
+C & TensorFlow & Microsoft & tmux \\
+C++ & Keras & MacOS & neovim \\
+Bash & Scikit-learn & & slurm \\
+\LaTeX & Pandas & &  \\
+HTML & SymPy & &  \\
+CSS & SciPy & &  \\
+& quTiP & &  \\
+ & Qibo & &  \\
+ & Qiskit & &  \\
+\end{tabularx}
+
+
+\cvsect{Languages}
+
+\textbf{Italian} - Native\\
+\textbf{English} - Fluent\\
+\textbf{German} - Intermediate
+
+
+
+
+
 
 \end{document}
 
