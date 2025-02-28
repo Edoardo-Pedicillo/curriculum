@@ -23,7 +23,13 @@
 
 \documentclass[9pt]{developercv} % Default font size, values from 8-12pt are recommended
 
-\usepackage{multibbl}
+\usepackage[backend=bibtex]{biblatex}
+
+\defbibheading{journals}{\textbf{Articles} }
+\defbibheading{proceedings}{\textbf{Proceedings}}
+
+\addbibresource[label=journals]{journal}
+\addbibresource[label=proceedings]{conference}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -219,60 +225,25 @@
         {}
 \end{entrylist}
 
-
 \cvsect{Publications}
+
+
+\begin{refsection}[journals]
+    \nocite{*}
+    \printbibliography[heading=journals]
+\end{refsection}
+
+\begin{refsection}[proceedings]
+    \nocite{*}
+    \printbibliography[heading=proceedings]
+\end{refsection}
+
+
+
 
 % \subsection{Journal Article(Accepted)}
 % \cventry{2019}{\textbf{Pratik Dutta}, Sriparna Saha, Sanket Pai and Aviral Kumar}{}{Protein-protein Interaction based Generative Model for Improving Gene Clustering}{In \textit{\textbf{Scientific Reports-Nature}} (\textbf{Impact Factor: 4.12)}}{}
 
-\textbf{Articles} \\
-
-\begin{entrylist}
-    \entry
-        {2024}
-        {Double-bracket quantum algorithms for high-fidelity ground state preparation}
-        {}
-        {on \href{https://doi.org/10.48550/arXiv.2408.03987}{\textbf{arXiv}} and under review.} 
-    \entry
-        {2024}
-        {Qibocal: an open-source framework for calibration of self-hosted quantum devices.}
-        {}
-        {on \href{https://doi.org/10.48550/arXiv.2410.00101}{\textbf{arXiv}} and under review.} 
-        {}
-    \entry
-        {2024}
-        {Qibolab: an open-source hybrid quantum operating system}
-        {}
-        {on \href{https://quantum-journal.org/papers/q-2024-02-12-1247}{\textbf{Quantum Journal}}.} 
-        {}
-\end{entrylist}
-
-\textbf{In conference Proceedings} \\
-
-\begin{entrylist}
-
-    \entry
-        {2024}
-        {Strategies for optimizing double-bracket quantum algorithms}
-        {}
-        {on \href{https://arxiv.org/abs/2408.07431}{\textbf{arXiv}}.} 
-    \entry
-        {2024}
-        {An open-source framework for quantum hardware control}
-        {}
-        {on \href{https://arxiv.org/abs/2407.21737}{\textbf{arXiv}}.} 
-    \entry
-        {2024}
-        {Beyond full statevector simulation with Qibo}
-        {}
-        {on \href{https://arxiv.org/abs/2408.00384}{\textbf{arXiv}}.} 
-    \entry
-        {2023}
-        {Benchmarking machine learning models for quantum state classification}
-        {}
-        {on \href{https://arxiv.org/abs/2309.07679}{\textbf{arXiv}}.} 
-
-\end{entrylist}
 %----------------------------------------------------------------------------------------
 %	ADDITIONAL INFORMATION
 %----------------------------------------------------------------------------------------
