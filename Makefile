@@ -1,48 +1,33 @@
 SHELL := /bin/bash
-output = main.pdf
-paper = main.tex
 
-bibfile = references.bib
+# Variables
+OUTPUT = curriculum_Edoardo_Pedicillo
+PAPER = main.tex
+NAME_OUT = -jobname=$(OUTPUT)
+LATEX = pdflatex $(NAME_OUT) $(PAPER)
+BIBTEX = bibtex $(OUTPUT)
 
-figures = $(wildcard figures/*.pdf)
+# File extensions to clean
+LATEX_BYPRODUCTS = *.{log,aux,bbl,bcf,blg,ilg,toc,tdo,fls,fdb_latexmk,lof,lot,idx,ind,snm,out,nav,synctex.gz,bak,xml,dvi,spl}
+PDF = $(OUTPUT).pdf
 
-LC = pdflatex
-FPFLAGS = "-shell-escape"
-LPFLAGS = "-shell-escape"
-BC = bibtex
-arxivtar = paper.tar
+# Targets
+.PHONY: all clean clean_latex
 
+all: $(OUTPUT).pdf
 
-.PHONY: all clean clean_latex arxiv pdf
+$(OUTPUT).pdf: $(PAPER)
+	$(LATEX)
+	$(BIBTEX)1-blx
+	$(BIBTEX)2-blx
+	$(LATEX)
+	$(LATEX)  # Run LaTeX again to ensure references are resolved
 
-all: $(output)
+clean:
+	@echo "Removing all LaTeX byproducts..."
+	@rm -f $(LATEX_BYPRODUCTS)
+	@rm -f *blx.bib
 
-arxiv: $(arxivtar)
-
-pdf: $(output)
-
-%.pdf : %.tex $(bibfile) $(figures) | %.bbl
-	@$(LC) $(FPFLAGS) $< > /dev/null
-	@$(LC) $(LPFLAGS) $<
-
-
-%.bbl : %.aux $(bibfile)
-	@echo "Generating bibliography"
-	@echo $<
-	@$(BC) $<
-
-%.aux : %.tex
-	@echo "First pass"
-	@$(LC) $(FPFLAGS) $< > /dev/null
-
-%.tar: %.tex %.bbl
-	@echo "Creating arxiv tar"
-	tar -cf $@ $^ figures
-
-clean_latex:
-	@echo "Removing all latex byproducts"
-	@rm -f *.{log,aux,bbl,bcf,blg,ilg,toc,tdo,fls,fdb_latexmk,lof,lot,idx,ind,snm,out,nav,synctex.gz,bak,xml,dvi,spl}
-
-clean: clean_latex
-	@echo "Removing latex pdf and arxiv tar"
-	@rm -f $(output) $(arxivtar)
+cleaa_all: clean_latex
+	@echo "Removing generated PDF..."
+	@rm -f $(PDF)
