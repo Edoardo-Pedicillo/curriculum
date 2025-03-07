@@ -20,6 +20,7 @@ $(OUTPUT).pdf: $(PAPER)
 	$(LATEX)
 	$(BIBTEX)1-blx
 	$(BIBTEX)2-blx
+	$(BIBTEX)3-blx
 	$(LATEX)
 	$(LATEX)  # Run LaTeX again to ensure references are resolved
 

@@ -28,13 +28,14 @@
 \usepackage{array}
 \usepackage{makecell}
 \usepackage{tikz}
-
-\defbibheading{journals}{\textbf{Articles} }
+\usepackage{enumitem}
+\defbibheading{journals}{\textbf{Peer-review articles} }
+\defbibheading{preprints}{\textbf{Pre-prints} }
 \defbibheading{proceedings}{\textbf{Proceedings}}
 
 \addbibresource[label=journals]{journal}
 \addbibresource[label=proceedings]{conference}
-%----------------------------------------------------------------------------------------
+\addbibresource[label=preprints]{preprints}
 
 \begin{document}
 
@@ -42,6 +43,17 @@
 %	TITLE AND CONTACT INFORMATION
 %----------------------------------------------------------------------------------------
 
+\newcommand{\skillpoints}[1][3]{%
+  \setlength{\unitlength}{1ex}%
+  \begin{picture}(1,1.8)
+    \linethickness{0.3ex}%
+    \textcolor{gray!15}{\multiput(0, 0.15)(0, 0.6){3}{\line(1,0){1}}}
+    \multiput(0, 0.15)(0, 0.6){#1}{\line(1,0){1}}
+  \end{picture}%
+}
+
+
+%-----
 \begin{minipage}[t]{0.45\textwidth} % Left column with your name and title, change the width as needed
 	\vspace{-\baselineskip} % Required for vertically aligning minipages
 	
@@ -80,14 +92,12 @@
 
 I am a passionate physicist and PhD candidate at the University of Milan, 
 specializing in quantum computing and hardware calibration.
-My research focuses on developing open-source tools such as Qibocal 
-and Qibolab, which aim to simplify quantum hardware calibration.
+My research focuses on developing open-source and community driven software aiming
+a full stack approach on quantum computing and on exploring possible new applications.  
 
-Beyond my academic pursuits, I have a keen interest in optimizing computing environments.
-I enjoy experimenting with tools like Neovim and tmux to create efficient and
-personalized workflows. 
-This passion for fine-tuning systems not only enhances my productivity but also
-reflects my broader philosophy of continuous improvement and innovation.
+Beyond my academic pursuits, I have a keen interest in optimizing my computer and
+coding experience, I enjoy experimenting with tools like Neovim and tmux to 
+create efficient and personalized workflows. 
 
 % \begin{minipage}[t]{0.4\textwidth} % Left column with the introduction text, change the width as needed
 % 	\vspace{-\baselineskip} % Required for vertically aligning minipages
@@ -159,57 +169,86 @@ reflects my broader philosophy of continuous improvement and innovation.
 \end{entrylist}
 
 \cvsect{Projects}
+\begin{itemize}[topsep=0pt]
+    \addtolength{\itemindent}{65px}
+    \setlength\itemsep{1px}
+    \item[\faGithub] \href{https://github.com/qiboteam/qibo}{\textbf{Qibo}}:
+         an open-source full stack API for quantum simulation and quantum hardware control.
+    \item[\faGithub] \href{https://github.com/qiboteam/qibolab}{\textbf{Qibolab}}:
+        software providing Quantum Characterization Validation and Verification protocols. 
+    \item[\faGithub] \href{https://github.com/qiboteam/qibocal}{\textbf{Qibocal}}:
+        software providing Quantum Characterization Validation and Verification protocols. 
+    \item[\faGithub] \href{https://github.com/qiboteam/workflows}{\textbf{Workflow}}:
+        collection of reusable Github workflows.
+\end{itemize}
+% \begin{entrylist}
+% 	\entry
+% 		{}
+%         {\faGithub~\href{https://github.com/qiboteam/qibo}{\textbf{Qibo}}}
+% 		{}
+%         {an open-source full stack API for quantum simulation and quantum hardware control.}
+
+%     \entry
+%         {}
+%         {\faGithub~\href{https://github.com/qiboteam/qibocal}{\textbf{Qibocal}}}
+%         {}
+%         {software providing Quantum Characterization Validation and Verification protocols. }
+
+%     \entry
+%         {}
+%         {\faGithub~\href{https://github.com/qiboteam/qibolab}{\textbf{Qibolab}}}
+%         {}
+%         {the dedicated Qibo backend for the automatic deployment of quantum circuits on quantum hardware. }
+
+%     \entry
+%         {}
+%         {\faGithub~\href{https://github.com/qiboteam/boostvqe}{\textbf{Boostvqe}}}
+%         {}
+%         {Boosting variational eigenstate preparation algorithms by double-bracket iteration.}
+
+% \end{entrylist}
+\cvsect{Publications}
+
+\begin{refsection}[journals]
+    \nocite{*}
+    \printbibliography[heading=journals]
+\end{refsection}
+
+\begin{refsection}[preprints]
+    \nocite{*}
+    \printbibliography[heading=preprints]
+\end{refsection}
+
+\begin{refsection}[proceedings]
+    \nocite{*}
+    \printbibliography[heading=proceedings]
+\end{refsection}
+
+
+\cvsect{Participation in events and contribution}
+\\
+
 \begin{entrylist}
-	\entry
-		{}
-        {\faGithub~\href{https://github.com/qiboteam/qibo}{\textbf{Qibo}}}
-		{}
-        {an open-source full stack API for quantum simulation and quantum hardware control.}
 
     \entry
+        {2024}
+        {\small{March meeting}}
+        {Minneapolis, MN}
+        {2024 APS March meeting.}
         {}
-        {\faGithub~\href{https://github.com/qiboteam/qibocal}{\textbf{Qibocal}}}
-        {}
-        {software providing Quantum Characterization Validation and Verification protocols. }
 
     \entry
-        {}
-        {\faGithub~\href{https://github.com/qiboteam/qibolab}{\textbf{Qibolab}}}
-        {}
-        {the dedicated Qibo backend for the automatic deployment of quantum circuits on quantum hardware. }
-
-    \entry
-        {}
-        {\faGithub~\href{https://github.com/qiboteam/boostvqe}{\textbf{Boostvqe}}}
-        {}
-        {Boosting variational eigenstate preparation algorithms by double-bracket iteration.}
-
-\end{entrylist}
-
-\cvsect{Participation in Events}
-
-\begin{entrylist}
-
-    \entry
-        {July 2023}
-        {Summer School}
+        {2023}
+        {\small{Summer school on Mathematical foundations of Quantum Machine Learning}}
         {University of Trento, IT}
-        {Summer school on Mathematical foundations of Quantum Machine Learning.}
+        {}
         {}
          
     \entry
-        {November 2023}
-        {QTML}
+        {2023}
+        {\small{QTML}}
         {CERN, Geneva, CH}
         {Quantum Techniques in Machine Learning.}
-        {}
-
-
-    \entry
-        {March 2024}
-        {March meeting}
-        {Minneapolis, MN}
-        {2024 APS March meeting.}
         {}
 
 
@@ -218,49 +257,49 @@ reflects my broader philosophy of continuous improvement and innovation.
 \textbf{Talks}\\
 \begin{entrylist}
     \entry
-        {May 2024}
-        {Towards an open-source hybrid quantum operating system}
+        {2024}
+        {\small{Towards an open-source hybrid quantum operating system}}
         {Stony Brook, NY}
         {22nd International Workshop on Advanced Computing and Analysis Techniques in Physics Research.}
         {}
 
     \entry
-        {June 2024}
-        {Towards an open-source framework to perform quantum calibration and characterization}
+        {2024}
+        {\small{Towards an open-source framework to perform quantum calibration and characterization}}
         {Copenhagen, DK}
         {Workshop on Quantum Software.}
+        {}
+
+    \entry
+        {2023}
+        {\small{Qubit calibration with Qibocal}}
+        {Milan, IT}
+        {First year workshop.}
+        {}
+
+    \entry
+        {2022}
+        {\small{Quantum computers: a new frontier in HEP}}
+        {Milan, IT}
+        {Milan christmas meeting.}
         {}
 \end{entrylist}
 
 \textbf{Posters}\\
 \begin{entrylist}
     \entry
-        {January 2025}
+        {2025}
         {Quantum Technology Symposium.}
         {Abu Dhabi, UAE}
         {}
         {}
     \entry
-        {January 2024}
+        {2024}
         {QIP}
         {Taipei, TW}
         {Quantum Information Process.}
         {}
 \end{entrylist}
-
-\cvsect{Publications}
-
-
-\begin{refsection}[journals]
-    \nocite{*}
-    \printbibliography[heading=journals]
-\end{refsection}
-
-\begin{refsection}[proceedings]
-    \nocite{*}
-    \printbibliography[heading=proceedings]
-\end{refsection}
-
 
 
 
@@ -273,33 +312,28 @@ reflects my broader philosophy of continuous improvement and innovation.
 
 %----------------------------------------------------------------------------------------
 \cvsect{Skills}
-%---------------------------------------------------------
-
-\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
-\textbf{Programming Languages} & \textbf{\makecell{Framework \\ \& Libraries}} & \textbf{OS} & \textbf{Tools} \\
-Python & NumPy & Linux & git \\
-C & TensorFlow & Microsoft & tmux \\
-C++ & Keras & MacOS & neovim \\
-Bash & Scikit-learn & & slurm \\
-\LaTeX & Pandas & &  \\
-HTML & SymPy & &  \\
-CSS & SciPy & &  \\
-& quTiP & &  \\
- & Qibo & &  \\
- & Qiskit & &  \\
-\end{tabularx}
-
+\begin{itemize}[leftmargin=*, topsep=0pt]
+\setlength\itemsep{0pt}
+    \item \textbf{Programming Languages:} Python, C, C++, Bash, \LaTeX, HTML, CSS
+    \item \textbf{Frameworks \& Libraries:} NumPy, TensorFlow, Keras, Scikit-learn, Pandas, SymPy, SciPy, quTiP, Qibo, Qiskit
+    \item \textbf{Operating Systems:} Linux, Microsoft, MacOS
+    \item \textbf{Tools:} git, tmux, neovim, slurm
+\end{itemize}
 
 \cvsect{Languages}
+\begin{itemize}[leftmargin=*, topsep=0pt]
+\setlength\itemsep{0pt}
+    \item \textbf{Italian}: Native
+    \item \textbf{English}: Fluent
+    \item \textbf{German}: Intermediate
+\end{itemize}
 
-\textbf{Italian} - Native\\
-\textbf{English} - Fluent\\
-\textbf{German} - Intermediate
-
-
-
-
-
+\cvsect{Reference}
+\begin{itemize}[leftmargin=*, topsep=0pt]
+\setlength\itemsep{0pt}
+    \item \textbf{Stefano Carrazza}: stefano.carrazza@cern.ch
+    \item \textbf{Frederico Brito}: frederico.brito@tii.ae
+\end{itemize}
 
 \end{document}
 
