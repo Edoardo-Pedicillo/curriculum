@@ -180,7 +180,7 @@
 
 % Environment to hold a new list of entries
 \newenvironment{entrylist}{
-\renewcommand{\arraystretch}{0.5}
+\renewcommand{\arraystretch}{0.1}
 	\begin{longtable}[H]{l l}
 }{
 	\end{longtable}
